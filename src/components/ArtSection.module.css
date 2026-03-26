@@ -1,0 +1,37 @@
+.section {
+  animation: fadeRise 0.6s ease-out both;
+}
+
+.heading {
+  font-family: 'Cinzel', serif;
+  color: var(--green-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 15px var(--green-glow);
+  margin-bottom: 0.5em;
+}
+
+.placeholder {
+  text-align: center;
+  padding: 3em;
+  border: 1px dashed var(--border-subtle);
+  border-radius: 2px;
+  color: var(--text-secondary);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.sub {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-top: 0.5em;
+}
+
+@keyframes fadeRise {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

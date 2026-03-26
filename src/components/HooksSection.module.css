@@ -1,0 +1,78 @@
+.section {
+  animation: fadeRise 0.6s ease-out both;
+}
+
+.heading {
+  font-family: 'Cinzel', serif;
+  color: var(--green-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 15px var(--green-glow);
+  margin-bottom: 0.5em;
+}
+
+.hooks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.hook {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: 1.5em 2em;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hook::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--gold-deep), transparent);
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+}
+
+.hook:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glow);
+  box-shadow:
+    0 4px 25px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(74, 124, 89, 0.05);
+}
+
+.hook:hover::before {
+  opacity: 0.8;
+}
+
+.hookTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 10px rgba(201, 168, 76, 0.1);
+}
+
+.hookText {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05em;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+@keyframes fadeRise {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

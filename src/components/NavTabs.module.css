@@ -1,0 +1,54 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1.5em 0;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  padding: 0.6em 1.5em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+  transition: width 0.4s ease;
+}
+
+.tab:hover {
+  color: var(--gold-light);
+  text-shadow: 0 0 10px var(--gold-glow), 0 0 30px rgba(201, 168, 76, 0.08);
+}
+
+.tab:hover::after {
+  width: 100%;
+}
+
+.tab.active {
+  color: var(--gold-light);
+  text-shadow: 0 0 15px var(--gold-glow);
+}
+
+.tab.active::after {
+  width: 80%;
+  background: linear-gradient(90deg, transparent, var(--gold-deep), transparent);
+}

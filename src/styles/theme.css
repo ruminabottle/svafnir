@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Mulish:wght@300;400;600&display=swap');
+
+:root {
+  --bg-deep: #060a06;
+  --bg-dark: #0a100c;
+  --bg-card: rgba(12, 18, 14, 0.85);
+  --bg-card-hover: rgba(18, 28, 22, 0.92);
+  --border-subtle: rgba(74, 124, 89, 0.15);
+  --border-glow: rgba(74, 124, 89, 0.3);
+  --green-deep: #2d5a3d;
+  --green-mid: #4a7c59;
+  --green-light: #6b9b7a;
+  --green-pale: #8fb89e;
+  --green-glow: rgba(74, 124, 89, 0.4);
+  --gold-deep: #8b7a2e;
+  --gold-mid: #c9a84c;
+  --gold-light: #d4bf6a;
+  --gold-pale: #e8d48b;
+  --gold-glow: rgba(201, 168, 76, 0.3);
+  --text-primary: #d1cdc4;
+  --text-secondary: #8a8677;
+  --text-muted: #5a5749;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Cormorant Garamond', 'Mulish', serif;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Vignette */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    transparent 30%,
+    rgba(4, 8, 4, 0.4) 60%,
+    rgba(2, 4, 2, 0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Fog */
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 50%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(74, 124, 89, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 30%, rgba(74, 124, 89, 0.02) 0%, transparent 60%);
+  animation: fogDrift 30s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 99;
+}
+
+@keyframes fogDrift {
+  0%   { transform: translateX(-3%) translateY(0); opacity: 0.6; }
+  50%  { transform: translateX(2%) translateY(5%); opacity: 1; }
+  100% { transform: translateX(-1%) translateY(-3%); opacity: 0.7; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--green-deep); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green-mid); }
+
+::selection {
+  background: rgba(74, 124, 89, 0.3);
+  color: var(--gold-pale);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
