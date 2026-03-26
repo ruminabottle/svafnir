@@ -1,0 +1,10 @@
+.page {
+  flex: 1;
+  animation: fadeRise 0.6s ease-out both;
+  padding: 2em 0;
+}
+
+@keyframes fadeRise {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

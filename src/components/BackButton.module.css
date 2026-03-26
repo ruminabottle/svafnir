@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0 1em;
+}
+
+.button {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 90, 61, 0.15) 0%,
+    rgba(12, 18, 14, 0.6) 50%,
+    rgba(45, 90, 61, 0.15) 100%
+  );
+  border: 1px solid var(--gold-deep);
+  outline: 1px solid rgba(139, 122, 46, 0.15);
+  outline-offset: 3px;
+  color: var(--gold-mid);
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8em 2.5em;
+  transition: all 0.4s ease;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
+  position: relative;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background:
+    linear-gradient(135deg, var(--gold-mid) 4px, transparent 4px) top left,
+    linear-gradient(225deg, var(--gold-mid) 4px, transparent 4px) top right,
+    linear-gradient(315deg, var(--gold-mid) 4px, transparent 4px) bottom right,
+    linear-gradient(45deg, var(--gold-mid) 4px, transparent 4px) bottom left;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.button:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(139, 122, 46, 0.12) 0%,
+    rgba(45, 90, 61, 0.25) 30%,
+    rgba(12, 18, 14, 0.7) 50%,
+    rgba(45, 90, 61, 0.25) 70%,
+    rgba(139, 122, 46, 0.12) 100%
+  );
+  border-color: var(--gold-mid);
+  outline-color: rgba(201, 168, 76, 0.25);
+  color: var(--gold-light);
+  text-shadow: 0 0 15px rgba(201, 168, 76, 0.3);
+  box-shadow:
+    0 0 20px rgba(201, 168, 76, 0.08),
+    0 0 40px rgba(74, 124, 89, 0.05),
+    inset 0 0 20px rgba(201, 168, 76, 0.03);
+}
+
+.button:hover::before {
+  opacity: 0.7;
+}
+
+.arrow {
+  margin-right: 0.3em;
+}
