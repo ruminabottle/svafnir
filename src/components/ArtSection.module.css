@@ -26,9 +26,11 @@
 .imageFrame {
   flex: 1;
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--gold-deep);
+  outline: 1px solid rgba(139, 122, 46, 0.15);
+  outline-offset: 4px;
   border-radius: 2px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.05);
   background: var(--bg-card);
   position: relative;
   aspect-ratio: auto;

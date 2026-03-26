@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 
 const NAV_ITEMS = [
   {
-    label: 'Information',
+    label: 'Info',
     path: '/information',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,7 +38,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    label: 'User',
+    label: 'OOC',
     path: '/user',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -63,7 +63,7 @@ export default function Home() {
 
       <header className={styles.header}>
         <h1 className={styles.name}>Svafnir Asoltun</h1>
-        <p className={styles.subtitle}>Hunter of the Wilds</p>
+        <p className={styles.subtitle}>The Arcane Archer</p>
       </header>
 
       <Divider />
