@@ -41,22 +41,33 @@ body {
   overflow-x: hidden;
 }
 
-/* Vignette */
+/* Vignette — deep edges with faint green/gold color bleed */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 50% 30%,
-    transparent 30%,
-    rgba(4, 8, 4, 0.4) 60%,
-    rgba(2, 4, 2, 0.85) 100%
-  );
+  background:
+    radial-gradient(
+      ellipse at 50% 30%,
+      transparent 30%,
+      rgba(4, 8, 4, 0.4) 55%,
+      rgba(2, 4, 2, 0.85) 100%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(45, 90, 61, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(139, 122, 46, 0.04) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: 100;
 }
 
-/* Fog */
+/* Upper fog — cool green mist */
 body::after {
   content: '';
   position: fixed;
@@ -65,11 +76,27 @@ body::after {
   width: 120%;
   height: 50%;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(74, 124, 89, 0.03) 0%, transparent 70%),
-    radial-gradient(ellipse at 80% 30%, rgba(74, 124, 89, 0.02) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 50%, rgba(74, 124, 89, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 30%, rgba(74, 124, 89, 0.03) 0%, transparent 60%);
   animation: fogDrift 30s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 99;
+}
+
+/* Lower fog — warm gold ground haze */
+#root::after {
+  content: '';
+  position: fixed;
+  bottom: -10%;
+  left: -10%;
+  width: 120%;
+  height: 40%;
+  background:
+    radial-gradient(ellipse at 30% 80%, rgba(201, 168, 76, 0.025) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(139, 122, 46, 0.02) 0%, transparent 50%);
+  animation: fogDriftLow 25s ease-in-out infinite alternate-reverse;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes fogDrift {
@@ -78,10 +105,19 @@ body::after {
   100% { transform: translateX(-1%) translateY(-3%); opacity: 0.7; }
 }
 
+@keyframes fogDriftLow {
+  0%   { transform: translateX(2%) translateY(0); opacity: 0.5; }
+  50%  { transform: translateX(-2%) translateY(-3%); opacity: 0.9; }
+  100% { transform: translateX(1%) translateY(2%); opacity: 0.6; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-deep); }
-::-webkit-scrollbar-thumb { background: var(--green-deep); border-radius: 3px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--green-deep), var(--gold-deep));
+  border-radius: 3px;
+}
 ::-webkit-scrollbar-thumb:hover { background: var(--green-mid); }
 
 ::selection {

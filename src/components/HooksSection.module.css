@@ -44,14 +44,19 @@
 
 .hook:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-glow);
+  border-color: var(--gold-deep);
   box-shadow:
-    0 4px 25px rgba(0, 0, 0, 0.4),
-    0 0 15px rgba(74, 124, 89, 0.05);
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(201, 168, 76, 0.1),
+    0 0 40px rgba(74, 124, 89, 0.08);
+  transform: translateX(4px);
 }
 
 .hook:hover::before {
-  opacity: 0.8;
+  opacity: 1;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, var(--gold-mid), transparent);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
 }
 
 .hookTitle {

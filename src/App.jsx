@@ -6,6 +6,7 @@ import Information from './pages/Information';
 import Hooks from './pages/Hooks';
 import Art from './pages/Art';
 import User from './pages/User';
+import Backstory from './pages/Backstory';
 
 export default function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="information" element={<Information />} />
           <Route path="hooks" element={<Hooks />} />
           <Route path="art" element={<Art />} />
+          <Route path="backstory" element={<Backstory />} />
           <Route path="user" element={<User />} />
         </Route>
       </Routes>

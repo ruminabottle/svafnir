@@ -9,7 +9,7 @@ const STATS = [
   ['Height', '217 cm'],
   ['Weight', '110 Kg'],
   ['Eye Color', 'Emerald'],
-  ['Hair Color', 'Black'],
+  ['Hair Color', 'Umber'],
   ['Sexuality', 'Heterosexual'],
   ['Marital Status', 'Unknown'],
   ['Alignment', 'Chaotic Neutral'],
@@ -29,9 +29,6 @@ export default function InfoSection() {
           </div>
         ))}
       </div>
-      <Divider />
-      <h2 className={styles.heading}>Backstory</h2>
-      <p className={styles.backstory}>TBD</p>
     </div>
   );
 }

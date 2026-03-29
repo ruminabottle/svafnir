@@ -5,6 +5,8 @@ export default function Layout() {
   return (
     <div className={styles.page}>
       <div className={styles.cornerTL} />
+      <div className={styles.cornerTR} />
+      <div className={styles.cornerBL} />
       <div className={styles.cornerBR} />
       <Outlet />
     </div>
